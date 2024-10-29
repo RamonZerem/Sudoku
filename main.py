@@ -1,9 +1,7 @@
 import json
 import os
 import time
-import random
 from copy import deepcopy
-
 import sudoku_alg
 
 
@@ -21,7 +19,7 @@ def main():
             # count the number of puzzles
             n = len(boards)
             print(f"Testing {file}")
-        for func in [sudoku_alg.solve_with_mrv, sudoku_alg.solve_with_lcv, sudoku_alg.solve_backtrack]:
+        for func in [sudoku_alg.solve_backtrack, sudoku_alg.solve_with_mrv, sudoku_alg.solve_with_lcv]:
             if func == sudoku_alg.solve_backtrack and file == 'hard_20_sudoku_puzzles_16_16.json':
                 print(f"Skipping {func.__name__} for {file}")
                 continue
